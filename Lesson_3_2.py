@@ -4,7 +4,7 @@ def send_email(message, recipient, *, sender = "university.help@gmail.com"):
     s1 = False
 
     for i in range(len(prov)):
-        if ((recipient.find('@') != -1) and (recipient.find(prov[i]) != -1)):
+        if ((recipient.find('@') != -1) and (recipient.lower().find(prov[i]) != -1)):
             s0 = True
             break
         else:
@@ -13,7 +13,7 @@ def send_email(message, recipient, *, sender = "university.help@gmail.com"):
 
     if s0 == True:
         for i in range(len(prov)):
-            if (sender.find('@') != -1) and (sender.find(prov[i]) != -1):
+            if (sender.find('@') != -1) and (sender.lower().find(prov[i]) != -1):
                 s1 = True
                 break
             else:
@@ -30,6 +30,6 @@ def send_email(message, recipient, *, sender = "university.help@gmail.com"):
         print("НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса", sender, "на адрес", recipient)
 
 send_email('Это сообщение для проверки связи', 'vasyok1337@gmail.com')
-send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.ru', sender='urban.info@gmail.com')
+send_email('Вы видите это сообщение как лучший студент курса!', 'urban.fan@mail.Ru', sender='urban.info@gmail.com')
 send_email('Пожалуйста, исправьте задание', 'urban.student@mail.ru', sender='urban.teacher@mail.uk')
 send_email('Напоминаю самому себе о вебинаре', 'urban.teacher@mail.ru', sender='urban.teacher@mail.ru')
